@@ -1,0 +1,11 @@
+{
+  "name": "creature_game",
+  "version": "1.0.0",
+  "description": "game for poo class",
+  "main": "index.ts",
+  "scripts": {
+    "test": "ts-node src/index.ts"
+  },
+  "author": "Samuel",
+  "license": "ISC"
+}
