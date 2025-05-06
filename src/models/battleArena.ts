@@ -12,7 +12,7 @@ export class BattleArena {
         this.creatures.push(creature);
     }
 
-    startBattle(): string[] {
+    startBattle(): void {
         const battle: string[] = [];
         const moves: string[] = ['move', 'attack', 'regen'];
         let creature: Creature;
@@ -24,13 +24,13 @@ export class BattleArena {
             move = RandomMove(moves)
 
             if (move === 'move') {
-                battle.push(creature.move());
+                console.log(creature.move());
             } else if (move === 'attack') {
                 while (true) {
                     target = RandomCreature(this.creatures);
 
                     if (target != creature) {
-                        battle.push(creature.attack(target));
+                        console.log(creature.attack(target));
 
                         let alive: boolean = target.isAlive();
 
@@ -42,14 +42,13 @@ export class BattleArena {
 
                         if (this.creatures.length === 1) {
                             creature = RandomCreature(this.creatures);
-                            battle.push(`${creature.name} Venceu a batalha`);
-                            return battle;
+                            console.log(`${creature.name} Venceu a batalha`);
                         }
                         break;
                     }
                 }
             } else {
-                battle.push(creature.regen())
+                console.log(creature.regen())
             }
         }
     }
